@@ -1,0 +1,77 @@
+/* Task.module.css */
+.task {
+    width: 60%;
+    margin: auto;    
+    width: 52%;
+}
+
+.taskHeader {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+ul{
+    list-style-type: none;
+}
+
+.tarefa {
+    color: var(--gray-100);
+    font-size: 16px;
+}
+
+.concluida {
+    color: green;
+    font-size: 16px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.tarefaCriadatexto{
+    color: var(--blue)
+
+}
+.tarefaCriadanumero{
+    margin-left: 1rem;
+    color: var(--gray-200);
+    display: inline-block;
+    padding: 2px 8px; /* Adicione o espaço necessário ao redor do número */
+    border-radius: 40%; /* Deixe a sombra redonda */
+    background-color: var(--gray-400); /* Cor de fundo */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra */
+    font-size: 1rem;
+    
+}
+.tarefaConcluidaTexto{
+    color: var(--purple)
+
+}
+.tarefaConcluidaNumero{
+    margin-left: 1rem;
+    color: var(--gray-200);
+    display: inline-block;
+    padding: 6px 8px; /* Adicione o espaço necessário ao redor do número */
+    border-radius: 40%; /* Deixe a sombra redonda */
+    background-color: var(--gray-400); /* Cor de fundo */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Sombra */
+    font-size: 1rem;
+    
+}
+
+  /* Estilo para a tarefa não completada */
+.tarefa {
+    background: var(--gray-400); /* Cor de fundo */
+    color: #000;  /* Cor do texto */
+    padding: 10px; /* Espaço interno */
+    margin-bottom: 5px; /* Espaço entre as tarefas */
+    display: flex; /* Organiza os itens em uma linha */
+    justify-content: space-between; /* Espaça igualmente os itens */
+    align-items: center; /* Centraliza verticalmente os itens */
+    border-radius: 5px; /* Cantos arredondados */
+    width: 500px;
+  }
