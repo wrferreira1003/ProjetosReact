@@ -22,9 +22,10 @@ export function Task({ tasks, completaTask,excluirTarefas }: TaskProps) {
 
     return (
         <div className={styles.task}>
-            
+          
+          {tasks.length > 0 && 
             <div className={styles.taskHeader}>
-                
+            
                 <div className={styles.taskTarefa}>
                     <span className={styles.tarefaCriadatexto}>Tarefas Criadas:</span>
                     <span className={styles.tarefaCriadanumero}>{tasks.length}</span>
@@ -34,35 +35,47 @@ export function Task({ tasks, completaTask,excluirTarefas }: TaskProps) {
                     <span className={styles.tarefaConcluidaTexto}>Concluídas:</span>
                     <span className={styles.tarefaConcluidaNumero}>
                     {tasks.filter(task => task.completed).length} de {tasks.length}
-                     </span>
+                    </span>
                 </div>
             
             </div>
-            
-            <div className={styles.tarefa}>
-                
-                <ul>
-                    {tasks.map((task) => (
-                        <li key={task.id} 
-                            className={task.completed ? styles.completed : ''}>
+          }
+              
+              <ul>
+                  {tasks.map((task) => (
+                    <div className={styles.taskContainer}> 
+                        
+                        <li key={task.id}>
+
+                    
+                        <div className={styles.inputContainer}>
+                        
+                            <input 
+                                className={styles.taskCheckbox}
+                                type="checkbox"
+                                checked={task.completed}
+                                onChange={() => completaTask(task.id)}
+                                
+                            />
                             
-                        <input 
-                            type="checkbox"
-                            checked={task.completed}
-                            onChange={() => completaTask(task.id)}
-                        />
-                        {task.title}
-                        <button 
-                            onClick={() => excluirTarefas(task.id)}>
-                            <FontAwesomeIcon icon={faTrashAlt} />
-                        </button>
+                            <div 
+                                className={task.completed ? `${styles.tarefaTexto} ${styles.tarefaCompletada}` : styles.tarefaTexto}>
+                                {task.title}
+                            </div>
+
+                            <button 
+                                className={styles.deleteButton}
+                                onClick={() => excluirTarefas(task.id)}>
+                                <FontAwesomeIcon icon={faTrashAlt} />
+                            </button>
+                        </div>
+                        
                         </li>
-                    ))}
-                </ul> 
-            
-            </div>  
-        </div>
-    );
+                    </div>
+                  ))}
+              </ul> 
+              
+          </div>  
+        
+      );
 }
-
-

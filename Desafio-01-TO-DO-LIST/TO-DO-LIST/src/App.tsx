@@ -43,11 +43,15 @@ return (
     <main>
     {/* Passamos para o componente Task o estado da tarefa e a função 
     que verifica se esta concluido ou não*/}
+     
+    {tarefas.length > 0 && 
     <Task 
       tasks={tarefas} 
-      completaTask={completaTask}
+      completaTask={completaTask} 
       excluirTarefas={excluirTarefasTask}
       />
+    } 
+      
   
     </main>
     

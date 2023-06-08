@@ -62,16 +62,53 @@ ul{
     font-size: 1rem;
     
 }
-
+  
   /* Estilo para a tarefa não completada */
-.tarefa {
+.taskContainer {
     background: var(--gray-400); /* Cor de fundo */
-    color: #000;  /* Cor do texto */
-    padding: 10px; /* Espaço interno */
-    margin-bottom: 5px; /* Espaço entre as tarefas */
-    display: flex; /* Organiza os itens em uma linha */
-    justify-content: space-between; /* Espaça igualmente os itens */
-    align-items: center; /* Centraliza verticalmente os itens */
-    border-radius: 5px; /* Cantos arredondados */
-    width: 500px;
+    color: var(--gray-100);  /* Cor do texto */
+    margin-bottom: 10px; /* Espaço entre as tarefas */
+    border-radius: 10px; /* Cantos arredondados */
+    height: 60px;
+    
+   
+}
+.inputContainer{
+    display: flex;
+    align-items:flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+.taskCheckbox{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    flex: 0.2;
+    background-color: var(--gray-100);
+    border: 2px solid var(--blue); /* borda azul */
+    border-radius: 50%; /* para deixar redondo */
+    width: 20px; /* dimensione de acordo com suas necessidades */
+    height: 20px; /* dimensione de acordo com suas necessidades */
+    
+}
+.taskCheckbox:checked {
+    background-color: var(--gray-400); /* substitua por sua cor de fundo preferida quando o checkbox estiver marcado */
+}
+
+.tarefaTexto{
+    flex: 9.6;
+    overflow-wrap: break-word;
+    overflow: auto;
+    
+}
+.deleteButton{
+    flex: 0.2;
+    background: none;
+    border: none;
+    color: var(--gray-300);
+      
+}
+.tarefaCompletada {
+    text-decoration: line-through;
   }
